@@ -15,8 +15,9 @@ app.get('/', (request, response) => {
     response.send('This is the Main App for Deployment');
 })
 
+app.use(require('./routes/getRoutes'));
+
 // 4. listen설정
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 })
-
