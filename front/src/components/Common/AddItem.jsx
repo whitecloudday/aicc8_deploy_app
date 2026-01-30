@@ -1,8 +1,13 @@
 import React from 'react';
 import { IoAddCircleOutline } from 'react-icons/io5';
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../redux/slices/modalSlice';
 
 const AddItem = () => {
-  const handleOpenModal = () => {};
+  const dispatch = useDispatch();
+  const handleOpenModal = () => {
+    dispatch(openModal({ modalType: 'create', task: null }));
+  };
   return (
     <div className="add-card item w-1/3 h-[25vh] p-[0.25rem]">
       <div className="w-full h-full border border-gray-500 rounded-md flex py-3 items-center justify-center">
